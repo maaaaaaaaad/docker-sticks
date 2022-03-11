@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsEmail, IsString } from 'class-validator'
+import { IsEmail, IsOptional, IsString } from 'class-validator'
 import { RequiredEntity } from 'src/common/entites/require.entity'
 import { Column, Entity } from 'typeorm'
 
@@ -24,4 +24,10 @@ export class UserEntity extends RequiredEntity {
   @ApiProperty({ name: 'nickname' })
   @IsEmail({ always: true })
   nickname: string
+
+  @Column({ name: 'avatar-image', nullable: true })
+  @ApiProperty({ name: 'avatarImage', nullable: true })
+  @IsString({ always: false })
+  @IsOptional({ message: 'avatar image has optional' })
+  avatarImage?: string
 }
