@@ -1,3 +1,4 @@
 /docker-compose-dev.yml
 /pgadmin-data
 /pgdata
+.travis.yml
