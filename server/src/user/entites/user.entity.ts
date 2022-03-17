@@ -5,24 +5,24 @@ import { Column, Entity } from 'typeorm'
 
 @Entity({ name: 'user' })
 export class UserEntity extends RequiredEntity {
-  @Column({ name: 'user-name' })
+  @Column({ name: 'username' })
   @ApiProperty({ name: 'username' })
-  @IsString({ always: true })
+  @IsString()
   username: string
 
   @Column({ name: 'password' })
   @ApiProperty({ name: 'password' })
-  @IsString({ always: true })
+  @IsString()
   password: string
 
   @Column({ name: 'email' })
   @ApiProperty({ name: 'email' })
-  @IsEmail({ always: true })
+  @IsEmail()
   email: string
 
   @Column({ name: 'nickname' })
   @ApiProperty({ name: 'nickname' })
-  @IsEmail({ always: true })
+  @IsEmail()
   nickname: string
 
   @Column({ name: 'avatar-image', nullable: true })
